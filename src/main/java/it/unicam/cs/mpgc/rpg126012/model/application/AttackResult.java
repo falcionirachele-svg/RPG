@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012.utils;
+package it.unicam.cs.mpgc.rpg126012.model.application;
 
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;

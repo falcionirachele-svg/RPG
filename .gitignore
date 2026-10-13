@@ -42,6 +42,6 @@ bin/
 .DS_Store
 
 ### Database ###
-data/
+/data/
 *.mv.db
 *.trace.db

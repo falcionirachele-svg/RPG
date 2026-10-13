@@ -1,5 +1,4 @@
 package it.unicam.cs.mpgc.rpg126012.model.application;
-import it.unicam.cs.mpgc.rpg126012.utils.AttackResult;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
@@ -9,7 +8,6 @@ import lombok.*;
 import java.util.*;
 
 @Getter
-@Setter
 @AllArgsConstructor
 public class Battle {
 
@@ -17,7 +15,7 @@ public class Battle {
     private final Enemy enemy;
     private final Random random;
 
-    public AttackResult attack(GameCharacter attacker, Move move, GameCharacter target) {
+    private AttackResult attack(GameCharacter attacker, Move move, GameCharacter target) {
         int damage=0;
         boolean hit = random.nextInt(100) < move.getAccuracy();
         if(hit) {
