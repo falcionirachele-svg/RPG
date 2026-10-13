@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="rpgPU">
-        <class>it.unicam.cs.mpgc.rpg126012.model.Move</class>
-
+        <class>it.unicam.cs.mpgc.rpg126012.model.entity.Move</class>
+        <class>it.unicam.cs.mpgc.rpg126012.model.entity.Player</class>
+        <class>it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter</class>
+        <class>it.unicam.cs.mpgc.rpg126012.model.entity.Enemy</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:./data/rpg"/>

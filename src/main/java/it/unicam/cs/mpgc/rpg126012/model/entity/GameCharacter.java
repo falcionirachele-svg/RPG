@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012.model;
+package it.unicam.cs.mpgc.rpg126012.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class GameCharacter {
+public abstract class GameCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
@@ -42,14 +42,9 @@ public class GameCharacter {
         return hp > 0;
     }
 
-    public AttackResult attack(Move move, GameCharacter target) {
-        int damage=0;
-        boolean hit = move.hit();
-        if(hit) {
-            damage = Math.max(1, getAttack()*move.getPower()/100);
-            target.takeDamage(damage);
-        }
-        return new AttackResult(this, move, damage, hit);
+    public Move chooseMove(int index){
+        if(index<0 || index>=getMoves().size()) throw new IllegalArgumentException("Index out of bounds");
+        return getMoves().get(index);
     }
 
 

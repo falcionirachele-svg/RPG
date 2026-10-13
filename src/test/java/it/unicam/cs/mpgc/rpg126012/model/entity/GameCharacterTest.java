@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012.model;
+package it.unicam.cs.mpgc.rpg126012.model.entity;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
