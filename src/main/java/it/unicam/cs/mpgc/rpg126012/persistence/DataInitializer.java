@@ -49,7 +49,7 @@ public class DataInitializer {
         enemy.setMaxHp(data.hp());
         enemy.setHp(data.hp());
         enemy.setAttack(data.attack());
-        enemy.setDefense(data.defense());
+        enemy.setShields(data.shields());
         enemy.setMoves(data.moves().stream()
                 .map(name -> moveRepo.findByName(name).orElseThrow(() ->
                         new IllegalStateException("Il nemico " + data.name() + " usa la mossa sconosciuta " + name)))

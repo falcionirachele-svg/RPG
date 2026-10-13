@@ -19,7 +19,7 @@ public abstract class GameCharacter {
     protected int maxHp;
     @ManyToMany(fetch = FetchType.EAGER)
     protected List<Move> moves = new ArrayList<>();
-    protected int defense;
+    protected int shields;
     protected int attack;
     protected int level;
 

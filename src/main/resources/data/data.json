@@ -1,0 +1,52 @@
+{
+  "moves": [
+    { "name": "Tackle",        "power": 40,  "accuracy": 100 },
+    { "name": "Scratch",       "power": 35,  "accuracy": 100 },
+    { "name": "Quick Attack",  "power": 30,  "accuracy": 100 },
+    { "name": "Headbutt",      "power": 55,  "accuracy": 95 },
+    { "name": "Bite",          "power": 60,  "accuracy": 90 },
+    { "name": "Slash",         "power": 70,  "accuracy": 90 },
+    { "name": "Claw Swipe",    "power": 65,  "accuracy": 90 },
+    { "name": "Poison Sting",  "power": 45,  "accuracy": 95 },
+    { "name": "Acid Spray",    "power": 60,  "accuracy": 85 },
+    { "name": "Ember",         "power": 45,  "accuracy": 95 },
+    { "name": "Fireball",      "power": 75,  "accuracy": 85 },
+    { "name": "Flamethrower",  "power": 90,  "accuracy": 85 },
+    { "name": "Water Jet",     "power": 50,  "accuracy": 95 },
+    { "name": "Tidal Wave",    "power": 85,  "accuracy": 80 },
+    { "name": "Vine Whip",     "power": 50,  "accuracy": 95 },
+    { "name": "Thorn Storm",   "power": 80,  "accuracy": 80 },
+    { "name": "Spark",         "power": 50,  "accuracy": 95 },
+    { "name": "Thunderbolt",   "power": 90,  "accuracy": 80 },
+    { "name": "Rock Throw",    "power": 55,  "accuracy": 90 },
+    { "name": "Earthquake",    "power": 100, "accuracy": 75 },
+    { "name": "Ice Shard",     "power": 45,  "accuracy": 100 },
+    { "name": "Blizzard",      "power": 95,  "accuracy": 70 },
+    { "name": "Shadow Claw",   "power": 70,  "accuracy": 90 },
+    { "name": "Dark Pulse",    "power": 85,  "accuracy": 85 },
+    { "name": "Hyper Beam",    "power": 150, "accuracy": 60 }
+  ],
+  "enemies": [
+    { "name": "Slime",          "level": 1, "hp": 30,  "attack": 35, "shields": 15, "moves": ["Tackle"] },
+    { "name": "Giant Rat",      "level": 1, "hp": 28,  "attack": 40, "shields": 12, "moves": ["Scratch", "Quick Attack"] },
+    { "name": "Forest Sprout",  "level": 1, "hp": 35,  "attack": 32, "shields": 18, "moves": ["Tackle", "Vine Whip"] },
+
+    { "name": "Wolf",           "level": 2, "hp": 45,  "attack": 50, "shields": 25, "moves": ["Bite", "Quick Attack"] },
+    { "name": "Giant Spider",   "level": 2, "hp": 40,  "attack": 48, "shields": 22, "moves": ["Poison Sting", "Bite"] },
+    { "name": "Fire Imp",       "level": 2, "hp": 38,  "attack": 52, "shields": 20, "moves": ["Ember", "Scratch"] },
+
+    { "name": "Goblin",         "level": 3, "hp": 60,  "attack": 58, "shields": 30, "moves": ["Slash", "Headbutt", "Quick Attack"] },
+    { "name": "River Serpent",  "level": 3, "hp": 65,  "attack": 55, "shields": 32, "moves": ["Water Jet", "Bite", "Tidal Wave"] },
+    { "name": "Swamp Toad",     "level": 3, "hp": 70,  "attack": 50, "shields": 35, "moves": ["Acid Spray", "Poison Sting", "Tackle"] },
+
+    { "name": "Stone Golem",    "level": 4, "hp": 95,  "attack": 62, "shields": 50, "moves": ["Rock Throw", "Headbutt", "Earthquake"] },
+    { "name": "Storm Hawk",     "level": 4, "hp": 75,  "attack": 70, "shields": 35, "moves": ["Spark", "Quick Attack", "Thunderbolt"] },
+    { "name": "Frost Wolf",     "level": 4, "hp": 80,  "attack": 68, "shields": 40, "moves": ["Ice Shard", "Bite", "Blizzard"] },
+
+    { "name": "Shadow Knight",  "level": 5, "hp": 110, "attack": 78, "shields": 55, "moves": ["Shadow Claw", "Slash", "Dark Pulse"] },
+    { "name": "Ancient Treant", "level": 5, "hp": 130, "attack": 70, "shields": 60, "moves": ["Thorn Storm", "Vine Whip", "Earthquake"] },
+    { "name": "Lava Salamander","level": 5, "hp": 105, "attack": 82, "shields": 48, "moves": ["Fireball", "Claw Swipe", "Flamethrower"] },
+
+    { "name": "Elder Dragon",   "level": 6, "hp": 180, "attack": 90, "shields": 70, "moves": ["Flamethrower", "Claw Swipe", "Dark Pulse", "Hyper Beam"] }
+  ]
+}
