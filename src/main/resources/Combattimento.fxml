@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" styleClass="sfondo-root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.rpg126012.controller.BattleController">
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" text="Scontro" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <GridPane alignment="CENTER" hgap="20.0" prefHeight="292.0" prefWidth="604.0" vgap="10.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <!-- riga 0, colonna 0: informazioni del NEMICO -->
+            <VBox maxWidth="260.0" spacing="4.0" styleClass="info-box" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <children>
+                  <Label fx:id="enemyNameLabel" styleClass="info-name" text="Nemico  Lv 1" />
+                  <ProgressBar fx:id="enemyHpBar" maxWidth="Infinity" progress="1.0" />
+                  <Label fx:id="enemyHpLabel" text="HP 0/0" />
+                  <Label fx:id="enemyShieldsLabel" text="Scudi: 0" />
+               </children>
+            </VBox>
+
+            <!-- riga 0, colonna 1: immagine del NEMICO (la imposta il controller) -->
+            <ImageView fx:id="enemyImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <!-- riga 1, colonna 0: immagine del PLAYER -->
+            <ImageView fx:id="playerImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+            <!-- riga 1, colonna 1: informazioni del PLAYER -->
+            <VBox maxWidth="260.0" spacing="4.0" styleClass="info-box" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="playerNameLabel" styleClass="info-name" text="Player  Lv 1" />
+                  <ProgressBar fx:id="playerHpBar" maxWidth="Infinity" progress="1.0" />
+                  <Label fx:id="playerHpLabel" text="HP 0/0" />
+                  <Label fx:id="playerShieldsLabel" text="Scudi: 0" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="140.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <!-- messaggi della battaglia -->
+            <TextArea fx:id="logArea" editable="false" styleClass="log-area" wrapText="true" HBox.hgrow="ALWAYS" />
+            <!-- comandi: i bottoni delle mosse li crea il controller dentro movesGrid -->
+            <VBox prefWidth="300.0" spacing="8.0" styleClass="info-box">
+               <children>
+                  <GridPane fx:id="movesGrid" hgap="8.0" vgap="8.0">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="50.0" />
+                        <ColumnConstraints percentWidth="50.0" />
+                     </columnConstraints>
+                  </GridPane>
+                  <Button fx:id="shieldButton" maxWidth="Infinity" mnemonicParsing="false" onAction="#onShield" text="Scudo" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

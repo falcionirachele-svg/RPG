@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0"
+      styleClass="sfondo-root" stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="it.unicam.cs.mpgc.rpg126012.controller.MenuController">
+   <children>
+      <Label styleClass="title" text="NOME GIOCO" />
+      <Button fx:id="newGameButton" mnemonicParsing="false" prefWidth="150.0" text="Nuova partita" onAction="#onNewGame" />
+
+      <HBox fx:id="newGamePanel" alignment="CENTER" spacing="10.0" visible="false" managed="false">
+         <children>
+            <TextField fx:id="nameField" prefWidth="200.0" promptText="Nome del giocatore" onAction="#onConfirmNewGame" />
+            <Button fx:id="confirmButton" mnemonicParsing="false" text="Inizia" onAction="#onConfirmNewGame" />
+            <Button mnemonicParsing="false" text="Annulla" onAction="#onCancelNewGame" />
+         </children>
+      </HBox>
+
+      <Separator maxWidth="250.0" />
+      <VBox alignment="CENTER" spacing="8.0">
+         <children>
+            <Label styleClass="subtitle" text="Partite salvate" />
+            <ComboBox fx:id="savesCombo" prefWidth="200.0" promptText="Seleziona partita" />
+            <Button fx:id="loadButton" mnemonicParsing="false" prefWidth="150.0" text="Carica" onAction="#onLoadGame" />
+         </children>
+      </VBox>
+      <Separator maxWidth="250.0" />
+      <Button mnemonicParsing="false" prefWidth="150.0" text="Esci" onAction="#onExit" />
+   </children>
+</VBox>
