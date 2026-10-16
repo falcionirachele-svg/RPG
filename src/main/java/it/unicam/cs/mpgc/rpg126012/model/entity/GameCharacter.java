@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type")
+@DiscriminatorColumn(name = "dtype")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -23,6 +23,16 @@ public abstract class GameCharacter {
     protected int attack;
     protected int level;
 
+    public GameCharacter(String name, int hp, int maxHp, int shields, int attack, int level, List<Move> moves){
+        this.name= name;
+        this.hp=hp;
+        this.maxHp=maxHp;
+        this.shields=shields;
+        this.attack=attack;
+        this.level=level;
+        this.moves=moves;
+    }
+
     public int takeDamage(int damage) {
         return hp = Math.max(0, hp-damage);
     }
@@ -36,6 +46,10 @@ public abstract class GameCharacter {
         maxHp += 10;
         hp = maxHp;
         return level;
+    }
+
+    public int shield(int amount) {
+        return shields = Math.min(60, shields+amount);
     }
 
     public boolean isAlive(){

@@ -27,26 +27,31 @@
     { "name": "Hyper Beam",    "power": 150, "accuracy": 60 }
   ],
   "enemies": [
-    { "name": "Slime",          "level": 1, "hp": 30,  "attack": 35, "shields": 15, "moves": ["Tackle"] },
-    { "name": "Giant Rat",      "level": 1, "hp": 28,  "attack": 40, "shields": 12, "moves": ["Scratch", "Quick Attack"] },
-    { "name": "Forest Sprout",  "level": 1, "hp": 35,  "attack": 32, "shields": 18, "moves": ["Tackle", "Vine Whip"] },
+    { "name": "Slime",          "level": 1, "hp": 30,  "attack": 35, "shields": 0, "moves": ["Tackle"] },
+    { "name": "Giant Rat",      "level": 1, "hp": 28,  "attack": 40, "shields": 0, "moves": ["Scratch", "Quick Attack"] },
+    { "name": "Forest Sprout",  "level": 1, "hp": 35,  "attack": 32, "shields": 0, "moves": ["Tackle", "Vine Whip"] },
 
-    { "name": "Wolf",           "level": 2, "hp": 45,  "attack": 50, "shields": 25, "moves": ["Bite", "Quick Attack"] },
-    { "name": "Giant Spider",   "level": 2, "hp": 40,  "attack": 48, "shields": 22, "moves": ["Poison Sting", "Bite"] },
-    { "name": "Fire Imp",       "level": 2, "hp": 38,  "attack": 52, "shields": 20, "moves": ["Ember", "Scratch"] },
+    { "name": "Wolf",           "level": 2, "hp": 45,  "attack": 50, "shields": 1, "moves": ["Bite", "Quick Attack"] },
+    { "name": "Giant Spider",   "level": 2, "hp": 40,  "attack": 48, "shields": 1, "moves": ["Poison Sting", "Bite"] },
+    { "name": "Fire Imp",       "level": 2, "hp": 38,  "attack": 52, "shields": 1, "moves": ["Ember", "Scratch"] },
 
-    { "name": "Goblin",         "level": 3, "hp": 60,  "attack": 58, "shields": 30, "moves": ["Slash", "Headbutt", "Quick Attack"] },
-    { "name": "River Serpent",  "level": 3, "hp": 65,  "attack": 55, "shields": 32, "moves": ["Water Jet", "Bite", "Tidal Wave"] },
-    { "name": "Swamp Toad",     "level": 3, "hp": 70,  "attack": 50, "shields": 35, "moves": ["Acid Spray", "Poison Sting", "Tackle"] },
+    { "name": "Goblin",         "level": 3, "hp": 60,  "attack": 58, "shields": 1, "moves": ["Slash", "Headbutt", "Quick Attack"] },
+    { "name": "River Serpent",  "level": 3, "hp": 65,  "attack": 55, "shields": 1, "moves": ["Water Jet", "Bite", "Tidal Wave"] },
+    { "name": "Swamp Toad",     "level": 3, "hp": 70,  "attack": 50, "shields": 1, "moves": ["Acid Spray", "Poison Sting", "Tackle"] },
 
-    { "name": "Stone Golem",    "level": 4, "hp": 95,  "attack": 62, "shields": 50, "moves": ["Rock Throw", "Headbutt", "Earthquake"] },
-    { "name": "Storm Hawk",     "level": 4, "hp": 75,  "attack": 70, "shields": 35, "moves": ["Spark", "Quick Attack", "Thunderbolt"] },
-    { "name": "Frost Wolf",     "level": 4, "hp": 80,  "attack": 68, "shields": 40, "moves": ["Ice Shard", "Bite", "Blizzard"] },
+    { "name": "Stone Golem",    "level": 4, "hp": 95,  "attack": 62, "shields": 2, "moves": ["Rock Throw", "Headbutt", "Earthquake"] },
+    { "name": "Storm Hawk",     "level": 4, "hp": 75,  "attack": 70, "shields": 2, "moves": ["Spark", "Quick Attack", "Thunderbolt"] },
+    { "name": "Frost Wolf",     "level": 4, "hp": 80,  "attack": 68, "shields": 2, "moves": ["Ice Shard", "Bite", "Blizzard"] },
 
-    { "name": "Shadow Knight",  "level": 5, "hp": 110, "attack": 78, "shields": 55, "moves": ["Shadow Claw", "Slash", "Dark Pulse"] },
-    { "name": "Ancient Treant", "level": 5, "hp": 130, "attack": 70, "shields": 60, "moves": ["Thorn Storm", "Vine Whip", "Earthquake"] },
-    { "name": "Lava Salamander","level": 5, "hp": 105, "attack": 82, "shields": 48, "moves": ["Fireball", "Claw Swipe", "Flamethrower"] },
+    { "name": "Shadow Knight",  "level": 5, "hp": 110, "attack": 78, "shields": 2, "moves": ["Shadow Claw", "Slash", "Dark Pulse"] },
+    { "name": "Ancient Treant", "level": 5, "hp": 130, "attack": 70, "shields": 2, "moves": ["Thorn Storm", "Vine Whip", "Earthquake"] },
+    { "name": "Lava Salamander","level": 5, "hp": 105, "attack": 82, "shields": 2, "moves": ["Fireball", "Claw Swipe", "Flamethrower"] },
 
-    { "name": "Elder Dragon",   "level": 6, "hp": 180, "attack": 90, "shields": 70, "moves": ["Flamethrower", "Claw Swipe", "Dark Pulse", "Hyper Beam"] }
+    { "name": "Elder Dragon",   "level": 6, "hp": 180, "attack": 90, "shields": 3, "moves": ["Flamethrower", "Claw Swipe", "Dark Pulse", "Hyper Beam"] }
+  ],
+  "players": [
+    { "type": "Guerriero","hp": 120, "maxhp":120, "attack": 45, "shields": 3, "moves": ["Tackle", "Headbutt", "Poison Sting"] },
+    { "type": "Mago","hp": 80, "maxhp":80,  "attack": 60, "shields": 1, "moves": ["Ember", "Water Jet", "Fireball"] },
+    { "type": "Ladro","hp": 100, "maxhp":100, "attack": 50, "shields": 2, "moves": ["Quick Attack", "Scratch", "Vine Whip"] }
   ]
 }

@@ -13,7 +13,8 @@
 
       <HBox fx:id="newGamePanel" alignment="CENTER" spacing="10.0" visible="false" managed="false">
          <children>
-            <TextField fx:id="nameField" prefWidth="200.0" promptText="Nome del giocatore" onAction="#onConfirmNewGame" />
+            <TextField fx:id="nameField" prefWidth="180.0" promptText="Nome del giocatore" onAction="#onConfirmNewGame" />
+            <ComboBox fx:id="typeCombo" prefWidth="150.0" promptText="Personaggio" />
             <Button fx:id="confirmButton" mnemonicParsing="false" text="Inizia" onAction="#onConfirmNewGame" />
             <Button mnemonicParsing="false" text="Annulla" onAction="#onCancelNewGame" />
          </children>

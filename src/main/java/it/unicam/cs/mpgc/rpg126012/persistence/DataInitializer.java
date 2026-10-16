@@ -3,13 +3,16 @@ package it.unicam.cs.mpgc.rpg126012.persistence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
+import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.EnemyData;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.GameData;
+import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /** Popola il database al primo avvio con i dati di data.json. */
@@ -31,6 +34,11 @@ public class DataInitializer {
         GameData data = readData();
         data.moves().forEach(m -> moveRepo.save(new Move(m.name(), m.power(), m.accuracy())));
         data.enemies().forEach(e -> enemyRepo.save(toEnemy(e)));
+        List<PlayerData> playerDataList= data.players();
+    }
+
+    public List<PlayerData> getPlayerDataList() {
+        return readData().players();
     }
 
     private GameData readData() {
