@@ -5,6 +5,7 @@ import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
+import it.unicam.cs.mpgc.rpg126012.controller.BattleController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

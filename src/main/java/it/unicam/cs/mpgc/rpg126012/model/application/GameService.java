@@ -39,7 +39,14 @@ public class GameService {
     }
 
     public Player newPlayer(String name, PlayerData type) {
-        player= playerRepo.save(new Player(name, type.hp(), type.maxhp(), type.shields(), type.attack(),1, toMoves(type.moves())));
+        if(playerRepo.findByName(name)!=null) throw new IllegalArgumentException("Personaggio con questo nome gia esistente");
+        player= playerRepo.save(new Player(name, type.hp(), type.maxhp(), type.shields(), type.attack(),1, toMoves(type.moves()), type.type()));
+        return player;
+    }
+
+    public Player selectPlayer(String name){
+        player = playerRepo.findByName(name);
+        if(player==null){throw new IllegalArgumentException("Player non trovato");}
         return player;
     }
 

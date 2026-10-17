@@ -17,7 +17,6 @@ import java.util.Random;
 /** Punto di avvio: crea e collega tutti gli oggetti del gioco, poi mostra il menu. */
 public class App extends Application {
 
-    private static final String TITLE = "NOME GIOCO";
     private static final double MIN_WIDTH = 600;
     private static final double MIN_HEIGHT = 400;
 
@@ -36,16 +35,20 @@ public class App extends Application {
 
     /** Crea la logica di gioco e il gestore delle schermate, poi mostra il menu. */
     @Override
-    public void start(Stage primaryStage) {
-        GameService gameService = new GameService(playerRepo, enemyRepo, moveRepo, playersType, new Random());
-        SceneManager sceneManager = new SceneManager(primaryStage, gameService);
+    public void start(Stage primaryStage) throws Exception{
+        try {
+            GameService gameService = new GameService(playerRepo, enemyRepo, moveRepo, playersType, new Random());
+            SceneManager sceneManager = new SceneManager(primaryStage, gameService);
 
-        sceneManager.showMenu();
+            sceneManager.showMenu();
 
-        primaryStage.setTitle(TITLE);
-        primaryStage.setMinWidth(MIN_WIDTH);
-        primaryStage.setMinHeight(MIN_HEIGHT);
-        primaryStage.show();
+            primaryStage.setMinWidth(MIN_WIDTH);
+            primaryStage.setMinHeight(MIN_HEIGHT);
+            primaryStage.show();
+        }catch (Exception e) {
+            System.err.println("Errore durante il caricamento della storia");
+            e.printStackTrace();
+        }
     }
 
     /** Alla chiusura della finestra: chiude il database. */

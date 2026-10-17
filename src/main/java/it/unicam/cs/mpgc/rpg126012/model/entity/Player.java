@@ -10,7 +10,9 @@ import java.util.List;
 @Getter
 @Setter
 public class Player extends GameCharacter {
-    public Player(String name, int hp, int maxHp, int shields, int attack, int level, List<Move> moves){
+    private String type;
+    public Player(String name, int hp, int maxHp, int shields, int attack, int level, List<Move> moves, String type){
         super(name, hp, maxHp, shields, attack, level, moves);
+        this.type= type;
     }
 }

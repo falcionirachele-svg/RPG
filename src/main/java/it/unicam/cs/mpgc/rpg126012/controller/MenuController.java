@@ -82,7 +82,7 @@ public class MenuController {
     public void onLoadGame() {
         Player selected = savesCombo.getValue();
         if (selected == null) return;
-        gameService.setPlayer(selected);
+        gameService.selectPlayer(selected.getName());
         sceneManager.showBattle();
     }
 
