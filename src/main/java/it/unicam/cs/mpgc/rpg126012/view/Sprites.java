@@ -7,10 +7,11 @@ import java.io.InputStream;
 
 /**Classe che mi serve per caricare gli sprite per ogni nemico/personaggio*/
 public final class Sprites {
-    private static final String FOLDER = "/immges/characters/";
+    private static final String FOLDER = "/images/characters/";
     private Sprites(){}
 
     public static Image load(String key){
+        if(key==null) return null;
         String file = key.toLowerCase().replace(' ', '-') + ".png";
         InputStream in = Sprites.class.getResourceAsStream(FOLDER + file);
         return in == null ? null : new Image(in);

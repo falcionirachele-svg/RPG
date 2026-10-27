@@ -28,6 +28,7 @@ public class GameService {
 
     private Player player;
     private Battle currentBattle;
+    private BattleResult battleResult;
 
     public GameService(PlayerRepo playerRepo, EnemyRepo enemyRepo, MoveRepo moveRepo,
                        List<PlayerData> playersType, Random random) {
@@ -39,14 +40,13 @@ public class GameService {
     }
 
     public Player newPlayer(String name, PlayerData type) {
-        if(playerRepo.findByName(name)!=null) throw new IllegalArgumentException("Personaggio con questo nome gia esistente");
+        if(playerRepo.findByName(name).isPresent()) throw new IllegalArgumentException("Personaggio con questo nome gia esistente");
         player= playerRepo.save(new Player(name, type.hp(), type.maxhp(), type.shields(), type.attack(),1, toMoves(type.moves()), type.type()));
         return player;
     }
 
     public Player selectPlayer(String name){
-        player = playerRepo.findByName(name);
-        if(player==null){throw new IllegalArgumentException("Player non trovato");}
+        player = playerRepo.findByName(name).orElseThrow(()->new IllegalArgumentException("Player non trovato"));
         return player;
     }
 
@@ -78,6 +78,7 @@ public class GameService {
         }
         player.setHp(player.getMaxHp());
         player = playerRepo.save(player);
+        battleResult = new BattleResult(currentBattle);
 
     }
 

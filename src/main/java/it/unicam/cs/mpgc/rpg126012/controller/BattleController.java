@@ -5,9 +5,11 @@ import it.unicam.cs.mpgc.rpg126012.model.application.AttackResult;
 import it.unicam.cs.mpgc.rpg126012.model.application.Battle;
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
+import it.unicam.cs.mpgc.rpg126012.view.SceneManager;
 import it.unicam.cs.mpgc.rpg126012.view.Sprites;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.ImageView;
@@ -33,16 +35,15 @@ public class BattleController {
     @FXML private GridPane movesGrid;
     @FXML private Button shieldButton;
 
+    private SceneManager sceneManager;
     private Battle battle;
-    private Consumer<Boolean> onBattleEnd;
     private static final Duration END_DELAY = Duration.seconds(1.5);
 
 
     /**Chiamato automaticamente da SceneBuilder dopo il caricamento dell'FXML. */
-    public void init(Battle battle, Consumer<Boolean> onBattleEnd) {
+    public void init(Battle battle, SceneManager sceneManager) {
         this.battle = battle;
-        this.onBattleEnd = onBattleEnd;
-
+        this.sceneManager= sceneManager;
         enemyImage.setImage(Sprites.load(battle.getEnemy().getName()));
         playerImage.setImage(Sprites.load(battle.getPlayer().getType()));
 
@@ -118,14 +119,11 @@ public class BattleController {
     private void endBattle() {
         movesGrid.setDisable(true);
         shieldButton.setDisable(true);
-        boolean won = battle.playerWin();
-        log(won ? "Hai vinto la battaglia!" : "Sei stato sconfitto...");
+        log(battle.playerWin() ? "Hai vinto la battaglia!" : "Sei stato sconfitto...");
 
-        if (onBattleEnd != null) {
-            PauseTransition pause = new PauseTransition(END_DELAY);
-            pause.setOnFinished(e -> onBattleEnd.accept(won));
-            pause.play();
-        }
+        PauseTransition pause = new PauseTransition(END_DELAY);
+        pause.setOnFinished(e -> sceneManager.onBattleFinished());
+        pause.play();
     }
 
     private void log(String message) {

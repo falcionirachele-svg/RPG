@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.image.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="800.0" styleClass="sfondo-root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.mpgc.rpg126012.controller.ResultController">
+    <top>
+        <Label alignment="CENTER" contentDisplay="CENTER" styleClass="title" text="Risultato del combattimento" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+    </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+          <padding>
+              <Insets bottom="10" left="10" right="10" top="10" />
+          </padding>
+          <VBox alignment="CENTER" spacing="10" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: honeydew;">
+              <ImageView fx:id="playerImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true"  />
+              <Label fx:id="playerStats" style="-fx-font-weight: bold;-fx-font-size: 16px;"/>
+          </VBox>
+          <Region HBox.hgrow="ALWAYS" />
+          <VBox alignment="CENTER" spacing="10" prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: honeydew;">
+              <Label/>
+              <ImageView fx:id="enemyImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true"  />
+              <Label fx:id="enemyStats" style="-fx-font-weight: bold;-fx-font-size: 16px;"/>
+          </VBox>
+      </HBox>
+   </center>
+   <bottom>
+       <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExit" prefWidth="150.0" text="Esci" BorderPane.alignment="CENTER"> </Button>
+   </bottom>
+</BorderPane>

@@ -6,11 +6,9 @@ import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;
 import it.unicam.cs.mpgc.rpg126012.view.SceneManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.control.Alert.AlertType;
 
 /** Controller del menu iniziale: nuova partita, carica partita, esci. */
 public class MenuController {
@@ -72,8 +70,13 @@ public class MenuController {
         String name = nameField.getText().trim();
         PlayerData type = typeCombo.getValue();
         if (name.isEmpty() || type == null) return;
-
-        gameService.newPlayer(name, type);
+        try {
+            gameService.newPlayer(name, type);
+        }catch (Exception e) {
+            Alert a= new Alert(AlertType.INFORMATION);
+            a.setContentText(e.getMessage());
+            a.showAndWait();
+        }
         sceneManager.showBattle();
     }
 
