@@ -29,26 +29,22 @@ public class App extends Application {
     @Override
     public void init() {
         DataInitializer initializer = new DataInitializer(enemyRepo, moveRepo);
-        initializer.init();                                // popola il DB solo al primo avvio
-        playersType = initializer.getPlayerDataList();     // i personaggi servono a ogni avvio
+        initializer.init();// popola il DB solo al primo avvio
+        playersType = initializer.getPlayerDataList(); // i personaggi servono a ogni avvio
     }
 
     /** Crea la logica di gioco e il gestore delle schermate, poi mostra il menu. */
     @Override
     public void start(Stage primaryStage) throws Exception{
-        try {
-            GameService gameService = new GameService(playerRepo, enemyRepo, moveRepo, playersType, new Random());
-            SceneManager sceneManager = new SceneManager(primaryStage, gameService);
+        GameService gameService = new GameService(playerRepo, enemyRepo, moveRepo, playersType, new Random());
+        SceneManager sceneManager = new SceneManager(primaryStage, gameService);
 
-            sceneManager.showMenu();
+        sceneManager.showMenu();
 
-            primaryStage.setMinWidth(MIN_WIDTH);
-            primaryStage.setMinHeight(MIN_HEIGHT);
-            primaryStage.show();
-        }catch (Exception e) {
-            System.err.println("Errore durante il caricamento della storia");
-            e.printStackTrace();
-        }
+        primaryStage.setMinWidth(MIN_WIDTH);
+        primaryStage.setMinHeight(MIN_HEIGHT);
+        primaryStage.show();
+
     }
 
     /** Alla chiusura della finestra: chiude il database. */

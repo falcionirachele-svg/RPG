@@ -34,7 +34,6 @@ public class DataInitializer {
         GameData data = readData();
         data.moves().forEach(m -> moveRepo.save(new Move(m.name(), m.power(), m.accuracy())));
         data.enemies().forEach(e -> enemyRepo.save(toEnemy(e)));
-        List<PlayerData> playerDataList= data.players();
     }
 
     public List<PlayerData> getPlayerDataList() {

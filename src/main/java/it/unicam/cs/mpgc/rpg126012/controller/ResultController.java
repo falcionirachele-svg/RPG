@@ -1,6 +1,8 @@
 package it.unicam.cs.mpgc.rpg126012.controller;
 import it.unicam.cs.mpgc.rpg126012.model.application.BattleResult;
+import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
+import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
 import it.unicam.cs.mpgc.rpg126012.view.SceneManager;
 import it.unicam.cs.mpgc.rpg126012.view.Sprites;
 import javafx.fxml.FXML;
@@ -8,11 +10,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 public class ResultController {
-    @FXML private Button exitButton;
+
     @FXML private ImageView playerImage;
     @FXML private Label playerStats;
     @FXML private ImageView enemyImage;
     @FXML private Label enemyStats;
+    @FXML private Label winner;
 
     private SceneManager sceneManager;
 
@@ -21,13 +24,22 @@ public class ResultController {
         this.sceneManager = sceneManager;
         playerImage.setImage(Sprites.load(battleResult.getPlayerType()));
         enemyImage.setImage(Sprites.load(battleResult.getEnemyName()));
-        playerStats.setText(getStats(battleResult.getPlayer()));
-        enemyStats.setText(getStats(battleResult.getEnemy()));
+        playerStats.setText(getStats(battleResult.getPlayer(), battleResult));
+        enemyStats.setText(getStats(battleResult.getEnemy(), battleResult));
+        if(battleResult.isPlayerWins()){
+            winner.setText("Hai vinto!");
+        } else {
+            winner.setText("Hai perso!");
+        }
 
     }
 
-    private String getStats(GameCharacter character) {
-        return String.format("%s: %d/%d", character.getName(), character.getHp(), character.getMaxHp());
+    private String getStats(GameCharacter character, BattleResult battleResult) {
+        if(character instanceof Enemy) {
+            return String.format("%s: %d/%d", character.getName(), battleResult.getHpEnemy(), character.getMaxHp());
+
+        }
+        return String.format("%s: %d/%d", character.getName(), battleResult.getHpPlayer(), character.getMaxHp());
     }
 
     /**Cliccando il bottone ritorna al menu*/

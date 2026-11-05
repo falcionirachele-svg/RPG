@@ -27,7 +27,7 @@ public class MenuController {
     /** Chiamato automaticamente da JavaFX dopo il caricamento dell'FXML. */
     @FXML
     public void initialize() {
-        // "Inizia" attivo solo con nome scritto E personaggio scelto
+        // "Inizia" attivo solo con nome scritto e personaggio scelto
         confirmButton.disableProperty().bind(
                 nameField.textProperty().isEmpty().or(typeCombo.valueProperty().isNull()));
         // "Carica" attivo solo se è selezionata una partita
@@ -76,6 +76,7 @@ public class MenuController {
             Alert a= new Alert(AlertType.INFORMATION);
             a.setContentText(e.getMessage());
             a.showAndWait();
+            return;
         }
         sceneManager.showBattle();
     }

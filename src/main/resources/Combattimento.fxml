@@ -30,14 +30,14 @@
                </children>
             </VBox>
 
-            <!-- riga 0, colonna 1: immagine del NEMICO (la imposta il controller) -->
-            <ImageView fx:id="enemyImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <!-- riga 1, colonna 0: immagine del NEMICO (la imposta il controller) -->
+            <ImageView fx:id="enemyImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-            <!-- riga 1, colonna 0: immagine del PLAYER -->
-            <ImageView fx:id="playerImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <!-- riga 1, colonna 1: immagine del PLAYER -->
+            <ImageView fx:id="playerImage" fitHeight="150.0" fitWidth="150.0" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <!-- riga 1, colonna 1: informazioni del PLAYER -->
-            <VBox maxWidth="260.0" spacing="4.0" styleClass="info-box" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <!-- riga 0, colonna 1: informazioni del PLAYER -->
+            <VBox maxWidth="260.0" spacing="4.0" styleClass="info-box" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <children>
                   <Label fx:id="playerNameLabel" styleClass="info-name" text="Player  Lv 1" />
                   <ProgressBar fx:id="playerHpBar" maxWidth="Infinity" progress="1.0" />
