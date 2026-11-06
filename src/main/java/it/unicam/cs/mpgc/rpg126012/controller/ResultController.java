@@ -16,6 +16,7 @@ public class ResultController {
     @FXML private ImageView enemyImage;
     @FXML private Label enemyStats;
     @FXML private Label winner;
+    @FXML private Button continueButton;
 
     private SceneManager sceneManager;
 
@@ -27,8 +28,12 @@ public class ResultController {
         playerStats.setText(getStats(battleResult.getPlayer(), battleResult));
         enemyStats.setText(getStats(battleResult.getEnemy(), battleResult));
         if(battleResult.isPlayerWins()){
+            continueButton.setVisible(true);
+            continueButton.setManaged(true);
             winner.setText("Hai vinto!");
         } else {
+            continueButton.setVisible(false);
+            continueButton.setManaged(false);
             winner.setText("Hai perso!");
         }
 
@@ -47,5 +52,13 @@ public class ResultController {
     private void onExit(){
         sceneManager.showMenu();
     }
+
+    /**Cliccando il bottone avvia una nuova battaglia*/
+    @FXML
+    private void onContinue(){
+        sceneManager.showBattle();
+    }
+
+
 
 }

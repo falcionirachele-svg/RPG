@@ -16,4 +16,10 @@ public class EnemyRepo extends Repository<Enemy, Long> {
                 .setParameter("level", level)
                 .getResultList());
     }
+
+    public int findLevelMax(){
+        return read(entityManager -> entityManager.createQuery(
+                "SELECT e.level FROM Enemy e", Enemy.class).getMaxResults()
+        );
+    }
 }

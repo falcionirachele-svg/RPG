@@ -29,6 +29,7 @@ public class GameService {
     private Player player;
     private Battle currentBattle;
     private BattleResult battleResult;
+    private Boolean endGame=false;
 
     public GameService(PlayerRepo playerRepo, EnemyRepo enemyRepo, MoveRepo moveRepo,
                        List<PlayerData> playersType, Random random) {
@@ -63,8 +64,12 @@ public class GameService {
         if(player==null) throw new IllegalStateException("Player non selezionato");
         List<Enemy> enemies= enemyRepo.findByLevel(player.getLevel());
         if(enemies.isEmpty()){
-            //TODO: dopo un certo livello finisco i nemici
+            if(enemyRepo.findLevelMax()<player.getLevel()){
+                endGame=true;
+                return null;
+            }else{
             throw new IllegalArgumentException("Nessun nemico dello stesso livello trovato");
+            }
         }
         Enemy enemy = enemies.get(random.nextInt(enemies.size()));
         enemy.setHp(enemy.getMaxHp());
@@ -75,7 +80,7 @@ public class GameService {
 
     }
 
-    /**Fine di una battaglia, si sale di livello se viene vinta e poi viene salvata*/
+    /**Fine di una battaglia, si sale di livello se viene vinta, cura il giocatore e poi salva*/
     public void endBattle(){
         battleResult = new BattleResult(currentBattle, player.getHp(), currentBattle.getEnemy().getHp());
 
