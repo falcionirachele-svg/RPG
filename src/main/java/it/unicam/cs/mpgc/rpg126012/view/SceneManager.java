@@ -33,13 +33,15 @@ public class SceneManager {
         controller.init(gameService, this);
     }
 
-    /** Avvia una nuova battaglia e mostra la schermata di combattimento. */
+    /** Avvia una nuova battaglia e mostra la schermata di combattimento.
+     * Se il gioco è terminato mostra direttamente schermata finale del gioco */
     public void showBattle() {
-        FXMLLoader loader= load("/Combattimento.fxml");
         Battle battle= gameService.startBattle();
         if(gameService.getEndGame()){
             showEnd();
+            return;
         }
+        FXMLLoader loader= load("/Combattimento.fxml");
         BattleController controller = loader.getController();
         controller.init(battle, this);
     }

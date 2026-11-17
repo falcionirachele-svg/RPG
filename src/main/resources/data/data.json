@@ -47,7 +47,7 @@
     { "name": "Ancient Treant", "level": 5, "hp": 130, "attack": 70, "shields": 2, "moves": ["Thorn Storm", "Vine Whip", "Earthquake"] },
     { "name": "Lava Salamander","level": 5, "hp": 105, "attack": 82, "shields": 2, "moves": ["Fireball", "Claw Swipe", "Flamethrower"] },
 
-    { "name": "Elder Dragon",   "level": 6, "hp": 180, "attack": 90, "shields": 3, "moves": ["Flamethrower", "Claw Swipe", "Dark Pulse", "Hyper Beam"] }
+    { "name": "Elder Dragon",   "level": 6, "hp": 160, "attack": 87, "shields": 2, "moves": ["Flamethrower", "Claw Swipe", "Dark Pulse", "Hyper Beam"] }
   ],
   "players": [
     { "type": "Guerriero","hp": 120, "maxhp":120, "attack": 45, "shields": 3, "moves": ["Tackle", "Headbutt", "Poison Sting"] },

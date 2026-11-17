@@ -45,6 +45,7 @@ public abstract class GameCharacter {
         level++;
         maxHp += 10;
         hp = maxHp;
+        attack += 10;
         return level;
     }
 

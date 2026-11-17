@@ -41,12 +41,14 @@ public class GameService {
     }
 
     public Player newPlayer(String name, PlayerData type) {
+        endGame=false;
         if(playerRepo.findByName(name).isPresent()) throw new IllegalArgumentException("Personaggio con questo nome gia esistente");
         player= playerRepo.save(new Player(name, type.hp(), type.maxhp(), type.shields(), type.attack(),1, toMoves(type.moves()), type.type()));
         return player;
     }
 
     public Player selectPlayer(String name){
+        endGame=false;
         player = playerRepo.findByName(name).orElseThrow(()->new IllegalArgumentException("Player non trovato"));
         return player;
     }
@@ -62,14 +64,14 @@ public class GameService {
     /**Metodo di avvio battaglia: viene scelto un giocatore dello stesso livello del player*/
     public Battle startBattle(){
         if(player==null) throw new IllegalStateException("Player non selezionato");
+
+        if(enemyRepo.findLevelMax()<player.getLevel()){
+            endGame=true;
+            return null;
+        }
         List<Enemy> enemies= enemyRepo.findByLevel(player.getLevel());
         if(enemies.isEmpty()){
-            if(enemyRepo.findLevelMax()<player.getLevel()){
-                endGame=true;
-                return null;
-            }else{
             throw new IllegalArgumentException("Nessun nemico dello stesso livello trovato");
-            }
         }
         Enemy enemy = enemies.get(random.nextInt(enemies.size()));
         enemy.setHp(enemy.getMaxHp());

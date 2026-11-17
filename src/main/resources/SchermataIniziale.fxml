@@ -8,7 +8,7 @@
       xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="it.unicam.cs.mpgc.rpg126012.controller.MenuController">
    <children>
-      <Label styleClass="title" text="NOME GIOCO" />
+      <Label styleClass="title" text="L'ARENA DEI GUARDIANI" />
       <Button fx:id="newGameButton" mnemonicParsing="false" prefWidth="150.0" text="Nuova partita" onAction="#onNewGame" />
 
       <HBox fx:id="newGamePanel" alignment="CENTER" spacing="10.0" visible="false" managed="false">
