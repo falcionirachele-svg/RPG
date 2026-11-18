@@ -20,17 +20,8 @@ cd RPG
 ```
 ---
 ## 🤖 Uso di strumenti di AI
-Durante lo sviluppo di questo progetto, sono stati impiegati:
 
-* Google Gemini per:
-  * comprensione di logiche di programmazione
-  * individuazione e chiarimento di errori (debugging)
-  * stesura di specifiche sezioni di codice partendo da prompt mirati
+Durante lo sviluppo sono stati utilizzati **Google Gemini** e **GitHub Copilot** come strumenti di supporto: Gemini per la comprensione di concetti, il debugging e la generazione di frammenti di codice da prompt mirati; Copilot come assistente alla digitazione nell'IDE.
 
-* GitHub Copilot:
-  * all'interno dell'IDE come assistente alla digitazione
-  * supporto logico nei momenti di difficoltà durante la scrittura diretta del codice
-
-Ogni blocco di codice suggerito è stato letto, compreso appieno e adattato alle necessità dell'architettura del gioco. 
-Questo mi ha permesso di mantenere il totale controllo sul progetto, usando l'AI come acceleratore e non come sostituto dello studio.
+Ogni suggerimento è stato letto, compreso e adattato manualmente all'architettura del progetto, che è rimasto sotto il pieno controllo dello sviluppatore.
 
