@@ -3,7 +3,6 @@ package it.unicam.cs.mpgc.rpg126012.persistence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
-import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.EnemyData;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.GameData;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;

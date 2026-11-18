@@ -1,9 +1,7 @@
 package it.unicam.cs.mpgc.rpg126012.persistence;
 
-import it.unicam.cs.mpgc.rpg126012.model.entity.Enemy;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
 
-import java.util.List;
 import java.util.Optional;
 
 public class PlayerRepo extends Repository<Player, Long> {

@@ -7,6 +7,7 @@ import it.unicam.cs.mpgc.rpg126012.persistence.JPAUtil;
 import it.unicam.cs.mpgc.rpg126012.persistence.MoveRepo;
 import it.unicam.cs.mpgc.rpg126012.persistence.PlayerRepo;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;
+import it.unicam.cs.mpgc.rpg126012.ui.SceneManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

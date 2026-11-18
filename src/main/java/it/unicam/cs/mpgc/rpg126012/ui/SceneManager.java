@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012;
+package it.unicam.cs.mpgc.rpg126012.ui;
 
 import it.unicam.cs.mpgc.rpg126012.controller.BattleController;
 import it.unicam.cs.mpgc.rpg126012.controller.EndController;

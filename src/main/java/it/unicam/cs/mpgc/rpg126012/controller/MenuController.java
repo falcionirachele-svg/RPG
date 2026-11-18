@@ -3,7 +3,7 @@ package it.unicam.cs.mpgc.rpg126012.controller;
 import it.unicam.cs.mpgc.rpg126012.model.application.GameService;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Player;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;
-import it.unicam.cs.mpgc.rpg126012.SceneManager;
+import it.unicam.cs.mpgc.rpg126012.ui.SceneManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

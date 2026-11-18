@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012;
+package it.unicam.cs.mpgc.rpg126012.ui;
 
 
 import javafx.scene.image.Image;

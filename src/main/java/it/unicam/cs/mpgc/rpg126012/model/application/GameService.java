@@ -8,7 +8,6 @@ import it.unicam.cs.mpgc.rpg126012.persistence.MoveRepo;
 import it.unicam.cs.mpgc.rpg126012.persistence.PlayerRepo;
 import it.unicam.cs.mpgc.rpg126012.persistence.data.PlayerData;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,6 @@ import java.util.stream.Collectors;
 
 /**Classe contenente la logica di gioco.*/
 @Getter
-@Setter
 public class GameService {
 
     private final MoveRepo moveRepo;

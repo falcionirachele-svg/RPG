@@ -1,6 +1,6 @@
 package it.unicam.cs.mpgc.rpg126012.controller;
 
-import it.unicam.cs.mpgc.rpg126012.SceneManager;
+import it.unicam.cs.mpgc.rpg126012.ui.SceneManager;
 import javafx.fxml.FXML;
 
 public class EndController {
