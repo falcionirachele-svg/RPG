@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012.view;
+package it.unicam.cs.mpgc.rpg126012;
 
 
 import javafx.scene.image.Image;
@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 /**Classe che mi serve per caricare gli sprite per ogni nemico/personaggio*/
 public final class Sprites {
-    private static final String FOLDER = "/images/characters/";
+    private static final String FOLDER = "/view/images/characters/";
     private Sprites(){}
 
     public static Image load(String key){

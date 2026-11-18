@@ -5,18 +5,16 @@ import it.unicam.cs.mpgc.rpg126012.model.application.AttackResult;
 import it.unicam.cs.mpgc.rpg126012.model.application.Battle;
 import it.unicam.cs.mpgc.rpg126012.model.entity.GameCharacter;
 import it.unicam.cs.mpgc.rpg126012.model.entity.Move;
-import it.unicam.cs.mpgc.rpg126012.view.SceneManager;
-import it.unicam.cs.mpgc.rpg126012.view.Sprites;
+import it.unicam.cs.mpgc.rpg126012.SceneManager;
+import it.unicam.cs.mpgc.rpg126012.Sprites;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 
 /**Controller della battaglia: durante uno scontro tra un giocatore e un avversario.*/

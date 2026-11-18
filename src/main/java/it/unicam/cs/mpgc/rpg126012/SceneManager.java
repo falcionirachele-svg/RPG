@@ -1,4 +1,4 @@
-package it.unicam.cs.mpgc.rpg126012.view;
+package it.unicam.cs.mpgc.rpg126012;
 
 import it.unicam.cs.mpgc.rpg126012.controller.BattleController;
 import it.unicam.cs.mpgc.rpg126012.controller.EndController;
@@ -28,7 +28,7 @@ public class SceneManager {
 
     /** Mostra il menu iniziale. */
     public void showMenu() {
-        FXMLLoader loader = load("/SchermataIniziale.fxml");
+        FXMLLoader loader = load("/view/SchermataIniziale.fxml");
         MenuController controller = loader.getController();
         controller.init(gameService, this);
     }
@@ -41,7 +41,7 @@ public class SceneManager {
             showEnd();
             return;
         }
-        FXMLLoader loader= load("/Combattimento.fxml");
+        FXMLLoader loader= load("/view/Combattimento.fxml");
         BattleController controller = loader.getController();
         controller.init(battle, this);
     }
@@ -54,14 +54,14 @@ public class SceneManager {
 
     /**Mostra la schermata dei risultati del combattimento*/
     public void showResult() {
-        FXMLLoader loader = load("/Risultato.fxml");
+        FXMLLoader loader = load("/view/Risultato.fxml");
         ResultController controller = loader.getController();
         controller.init(gameService.getBattleResult(), this );
     }
 
     /**Mostra schermata finale*/
     public void showEnd(){
-        FXMLLoader loader = load("/SchermataFinale.fxml");
+        FXMLLoader loader = load("/view/SchermataFinale.fxml");
         EndController controller = loader.getController();
         controller.init(this);
     }

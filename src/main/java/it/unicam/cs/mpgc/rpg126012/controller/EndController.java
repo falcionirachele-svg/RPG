@@ -1,8 +1,6 @@
 package it.unicam.cs.mpgc.rpg126012.controller;
 
-import it.unicam.cs.mpgc.rpg126012.model.application.Battle;
-import it.unicam.cs.mpgc.rpg126012.view.SceneManager;
-import it.unicam.cs.mpgc.rpg126012.view.Sprites;
+import it.unicam.cs.mpgc.rpg126012.SceneManager;
 import javafx.fxml.FXML;
 
 public class EndController {
